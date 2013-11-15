@@ -34,7 +34,7 @@ class AmpTrac(service.Service):
         """
         with settings(user=self.serviceUser):
             git.branch('https://github.com/twisted-infra/amptrac-config', self.configDir)
-            amptracSource = 'https://github.com/twisted-infra/amptrac-server'
+            amptracSource = 'git+https://github.com/twisted-infra/amptrac-server'
             if _installDeps:
                 pip.install('{}'.format(amptracSource))
             else:
